@@ -14,7 +14,7 @@ let
 in
 let
   python3AppPackages = pkgs.recurseIntoAttrs rec {
-    pyrouteros = pkgs.python3.pkgs.callPackage ./pkgs/development/python-modules/routeros { lib = mylib; };  # TODO: deprecate if not updated before 22.05
+    pyrouteros = throw "pyrouteros has been removed, because it is unmaintained"; # added 2022-04-03
     bundlewrap = pkgs.python3.pkgs.callPackage ./pkgs/development/python-modules/bundlewrap { lib = mylib; };
   };
 in
@@ -33,7 +33,7 @@ rec {
 
   friidump = pkgs.callPackage ./pkgs/games/friidump { lib = mylib; };
 
-  git-smash = pkgs.callPackage pkgs/applications/version-management/git-and-tools/git-smash { lib = mylib; };
+  git-smash = throw "git-smash has been removed, because it is unmaintained"; # added 2022-04-03
 
   falsisign = pkgs.callPackage pkgs/applications/misc/falsisign/default.nix { lib = mylib; };
   masterpdfeditor4 = pkgs.callPackage pkgs/applications/misc/masterpdfeditor/default.nix { lib = mylib; qtbase = pkgs.qt5.qtbase; qtsvg = pkgs.qt5.qtsvg; wrapQtAppsHook = pkgs.qt5.wrapQtAppsHook; };
